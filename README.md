@@ -1,2 +1,2 @@
-# projecteuler
-Solutions to challenges from projecteuler.net
+# Solutions to challenges on projecteuler.net
+These are some of my solutions to challenges from projecteuler.net
