@@ -8,7 +8,7 @@ These are some of my solutions to challenges from projecteuler.net
 | 3                | [problem_3.py](problem_3.py)     |
 | 4                | [problem_4.py](problem_4.py)     |
 | 5                | [problem_5.py](problem_5.py)     |
-| 6                |                                  |
+| 6                | [problem_6.py]                                 |
 | 7                | [problem_7.py](problem_7.py)     |
 | 8                | [problem_8.py](problem_8.py)     |
 | 9                |                                  |
