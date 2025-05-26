@@ -1,24 +1,49 @@
-def multiply(l):
+def multiply(l: list)-> int:
+	"""
+	Multiplies all elements in a list of strings representing digits.
+
+	Args:
+		l (list): A list of strings, each representing a single digit.
+
+	Returns:	
+		int: The product of the digits.
+
+	"""
 	total = 1
 	for i in l:
 		total = total * int(i)
 	
 	return total
 
+
+def finding_largest_product(number: str, slice_length: int) -> str:
+	"""
+	Finds the adjacent digits that have the largest product in a number represented as a string.
+	
+	Args:
+		number (str): The number as a string.
+		slice_length (int): The length of the substring to consider for the product.
+		
+	Returns:
+		int: The largest product found.
+	"""
+	start: int = 0
+	end: int = slice_length
+	max_product: int = 0
+	max_product_slice: str = ''
+	while end <= len(number):
+		slice: str = number[start:end]
+		if '0' not in slice:
+			value = multiply(slice)
+			if value > max_product:
+				max_product = value
+				max_product_slice = slice
+		start += 1
+		end += 1
+	return max_product_slice
+
 def main():
 	number='7316717653133062491922511967442657474235534919493496983520312774506326239578318016984801869478851843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648950445244523161731856403098711121722383113622298934233803081353362766142828064444866452387493035890729629049156044077239071381051585930796086670172427121883998797908792274921901699720888093776657273330010533678812202354218097512545405947522435258490771167055601360483958644670632441572215539753697817977846174064955149290862569321978468622482839722413756570560574902614079729686524145351004748216637048440319989000889524345065854122758866688116427171479924442928230863465674813919123162824586178664583591245665294765456828489128831426076900422421902267105562632111110937054421750694165896040807198403850962455444362981230987879927244284909188845801561660979191338754992005240636899125607176060588611646710940507754100225698315520005593572972571636269561882670428252483600823257530420752963450'
-	start = 0
-	end = 13
-	summary = {}
-	while end <= 1000:
-		print end
-		summary[multiply(list(number[start:end]))] = end
-		start = start + 1
-		end = end + 1
-	
-	largest = max(summary.keys())
-	end = summary[largest]
-	start = summary[largest] - 13
-	print number[start:end]
+	print(finding_largest_product(number, 13))
 
 if __name__ == '__main__': main()
